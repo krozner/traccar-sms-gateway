@@ -79,23 +79,10 @@ class GatewayServer(
     private fun handleGet(
         response: HttpServletResponse
     ) {
+        response.contentType = "application/json; charset=utf-8"
         response.writer.print(
             """
-            <html>
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            </head>
-            <body>
-                <p>Send SMS using following API:</p>
-                <pre>
-                POST /
-                {
-                    "to": "+10000000000",
-                    "message": "Your message"
-                }
-                </pre>
-            </body>
-            </html>
+            {"status": "OK"}
             """.trimIndent()
         )
     }

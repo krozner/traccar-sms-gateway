@@ -82,7 +82,7 @@ class GatewayServer(
         response.contentType = "application/json; charset=utf-8"
         response.writer.print(
             """
-            {"status": "OK"}
+            {"status": "OK", "version": "0.0.1"}
             """.trimIndent()
         )
     }
